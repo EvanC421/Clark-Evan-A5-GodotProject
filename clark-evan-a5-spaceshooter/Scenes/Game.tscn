@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://civyjynq63c37"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_shhon"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="2_5lgtd"]
+
+[node name="Scene" type="Node2D"]
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("1_shhon")
+
+[node name="Rectangle" type="Node2D" parent="Player"]
+position = Vector2(657, 408)
+script = ExtResource("2_5lgtd")
