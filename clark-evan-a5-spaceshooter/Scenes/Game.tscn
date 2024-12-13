@@ -1,39 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://civyjynq63c37"]
+[gd_scene load_steps=6 format=3 uid="uid://civyjynq63c37"]
 
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_shhon"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="2_5lgtd"]
+[ext_resource type="PackedScene" uid="uid://b3j2ifistfucl" path="res://Scenes/laser.tscn" id="2_5n2tf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm7hx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6bhu"]
+size = Vector2(14, 13.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtjbx"]
 
 [node name="Scene" type="Node2D"]
 
-[node name="Player" type="Node2D" parent="."]
-position = Vector2(101, 415)
-scale = Vector2(3, 3)
+[node name="Player" type="RigidBody2D" parent="."]
+position = Vector2(59, 387)
 script = ExtResource("1_shhon")
+LaserShot = ExtResource("2_5n2tf")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Player"]
-position = Vector2(10.8, 10.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/StaticBody2D"]
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_fm7hx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_k6bhu")
 metadata/_edit_lock_ = true
 
-[node name="Rectangle" type="Node2D" parent="Player/StaticBody2D"]
+[node name="Rectangle" type="Node2D" parent="Player"]
+position = Vector2(0, 0.00823975)
+scale = Vector2(3, 3)
 script = ExtResource("2_5lgtd")
-size = Vector2(20, 20)
-corner_radius = 0.0
+size = Vector2(14, 13.2226)
+corner_radius = 1.0
+fill_color = Color(0.137255, 0.0196078, 1, 1)
 metadata/_edit_lock_ = true
 
 [node name="Level" type="Node2D" parent="."]
-position = Vector2(2, 551)
+position = Vector2(1, 551)
 scale = Vector2(13.96, 4.88)
 
 [node name="Platform 1" type="StaticBody2D" parent="Level"]
-position = Vector2(9.92857, 9.57143)
+position = Vector2(9.88539, 9.63115)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Platform 1"]
 shape = SubResource("RectangleShape2D_qtjbx")
@@ -43,10 +45,11 @@ metadata/_edit_lock_ = true
 script = ExtResource("2_5lgtd")
 size = Vector2(20, 20)
 corner_radius = 0.0
+fill_color = Color(0.560955, 0.560955, 0.560955, 1)
 metadata/_edit_lock_ = true
 
 [node name="Platform 2" type="StaticBody2D" parent="Level"]
-position = Vector2(41.6905, 9.42623)
+position = Vector2(40.043, 9.83607)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Platform 2"]
 shape = SubResource("RectangleShape2D_qtjbx")
@@ -56,10 +59,11 @@ metadata/_edit_lock_ = true
 script = ExtResource("2_5lgtd")
 size = Vector2(20, 20)
 corner_radius = 0.0
+fill_color = Color(0.560784, 0.560784, 0.560784, 1)
 metadata/_edit_lock_ = true
 
 [node name="Platform 3" type="StaticBody2D" parent="Level"]
-position = Vector2(72.4212, 9.42623)
+position = Vector2(72.5645, 9.83606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Platform 3"]
 shape = SubResource("RectangleShape2D_qtjbx")
@@ -69,4 +73,5 @@ metadata/_edit_lock_ = true
 script = ExtResource("2_5lgtd")
 size = Vector2(20, 20)
 corner_radius = 0.0
+fill_color = Color(0.560784, 0.560784, 0.560784, 1)
 metadata/_edit_lock_ = true
