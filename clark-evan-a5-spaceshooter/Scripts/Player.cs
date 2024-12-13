@@ -2,10 +2,12 @@ using Godot;
 using System;
 using System.Security.Cryptography.X509Certificates;
 
-public partial class Player : Node2D
+public partial class Player : RigidBody2D
 {
 	[Export]
 	private float Speed = 400;
+	[Export]
+	private float JumpHeight = 50;
 
 	[Export]
 	private PackedScene LaserShot;
@@ -20,8 +22,20 @@ public partial class Player : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		float moveX = Input.GetAxis("left", "right") * Speed * (float)delta;
-		Translate(new Vector2(moveX, 0));
+		if (Input.IsActionPressed("right"))
+		{
+			this.ApplyForce(Vector2.Right * Speed);
+		}
+
+		if (Input.IsActionPressed("left"))
+		{
+			this.ApplyForce(Vector2.Left * Speed);
+		}
+
+		if (Input.IsActionJustPressed("jump"))
+		{
+			this.ApplyImpulse(Vector2.Up * JumpHeight);
+		}
 
 		if (Input.IsActionJustPressed("shoot")) //player shoots laser
 		{
@@ -29,4 +43,5 @@ public partial class Player : Node2D
 			this.AddChild(laser);
 		}
 	}
+
 }
