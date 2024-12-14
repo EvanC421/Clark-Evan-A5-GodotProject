@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://civyjynq63c37"]
+[gd_scene load_steps=11 format=3 uid="uid://civyjynq63c37"]
 
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_shhon"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="2_5lgtd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/EnemySpawn1.cs" id="4_u5qfg"]
 [ext_resource type="PackedScene" uid="uid://d1cd52i82032t" path="res://Scenes/enemy.tscn" id="5_bx8om"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="5_i8mkc"]
+[ext_resource type="Script" path="res://Scripts/ScoreUI.cs" id="7_jig6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6bhu"]
 size = Vector2(14, 13.3333)
@@ -118,3 +119,11 @@ metadata/_edit_lock_ = true
 script = ExtResource("5_i8mkc")
 size = Vector2(50, 50)
 metadata/_edit_lock_ = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = 10.0
+offset_top = 559.0
+offset_right = 61.0
+offset_bottom = 582.0
+text = "Score: "
+script = ExtResource("7_jig6c")
