@@ -3,18 +3,14 @@ using System;
 
 public partial class Hitbox : Area2D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+	[Export]
+	private ScoreUI ScoreUI;
+	[Export]
+	private int Points = 1;
 
 	private void OnBodyEntered(Node2D body)
 	{
-		GD.Print("works");
+		ScoreUI.AddScore(Points);
 	}
 }

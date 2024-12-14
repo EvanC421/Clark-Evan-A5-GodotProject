@@ -3,7 +3,7 @@ using System;
 
 public partial class ScoreUI : Label
 {
-	private int score;
+	private int score = 0;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -19,7 +19,7 @@ public partial class ScoreUI : Label
 	public void AddScore(int points)
 	{
 		score += points;
-		UpdateDisplay();
+		GD.Print(score);
 	}
 
 }

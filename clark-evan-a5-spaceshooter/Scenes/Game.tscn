@@ -127,3 +127,57 @@ offset_right = 61.0
 offset_bottom = 582.0
 text = "Score: "
 script = ExtResource("7_jig6c")
+
+[node name="Enemy Spawn3" type="Node2D" parent="."]
+position = Vector2(1026, -46)
+script = ExtResource("4_u5qfg")
+PackedScene = ExtResource("5_bx8om")
+
+[node name="Enemy Spawn 1" type="StaticBody2D" parent="Enemy Spawn3"]
+position = Vector2(-472, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy Spawn3/Enemy Spawn 1"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_xfcvi")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Enemy Spawn3/Enemy Spawn 1"]
+script = ExtResource("5_i8mkc")
+size = Vector2(50, 50)
+metadata/_edit_lock_ = true
+
+[node name="Enemy Spawn4" type="Node2D" parent="."]
+position = Vector2(1026, -46)
+script = ExtResource("4_u5qfg")
+PackedScene = ExtResource("5_bx8om")
+
+[node name="Enemy Spawn 1" type="StaticBody2D" parent="Enemy Spawn4"]
+position = Vector2(-684, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy Spawn4/Enemy Spawn 1"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_xfcvi")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Enemy Spawn4/Enemy Spawn 1"]
+script = ExtResource("5_i8mkc")
+size = Vector2(50, 50)
+metadata/_edit_lock_ = true
+
+[node name="Enemy Spawn5" type="Node2D" parent="."]
+position = Vector2(1026, -46)
+script = ExtResource("4_u5qfg")
+PackedScene = ExtResource("5_bx8om")
+
+[node name="Enemy Spawn 1" type="StaticBody2D" parent="Enemy Spawn5"]
+position = Vector2(-219, -13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy Spawn5/Enemy Spawn 1"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_xfcvi")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Enemy Spawn5/Enemy Spawn 1"]
+script = ExtResource("5_i8mkc")
+size = Vector2(50, 50)
+metadata/_edit_lock_ = true

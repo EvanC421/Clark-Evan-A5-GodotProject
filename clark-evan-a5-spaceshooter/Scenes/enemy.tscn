@@ -9,9 +9,10 @@
 [node name="Enemy" type="RigidBody2D"]
 script = ExtResource("1_hp5aq")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("ScoreUI")]
 scale = Vector2(1.1, 1.1)
 script = ExtResource("2_d5ry0")
+ScoreUI = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 scale = Vector2(4.97, 4.97)
